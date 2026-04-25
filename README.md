@@ -100,17 +100,9 @@ Four feature groups covering geometry, player history, interaction, and time:
 
 ---
 
-## Quickstart
 
-### 1. Clone & install
 
-```bash
-git clone https://github.com/YOUR_USERNAME/xg-model.git
-cd xg-model
-pip install -r requirements.txt
-```
-
-### 2. Run training pipeline
+### 1. Run training pipeline
 
 ```bash
 python train.py
@@ -118,7 +110,7 @@ python train.py
 
 Data (La Liga 2015/16) is downloaded automatically — no API key or registration needed.
 
-### 3. Run tests
+### 2. Run tests
 
 ```bash
 pytest tests/ -v
@@ -141,20 +133,16 @@ Cross-validation results (3-fold, gap=2 matches, La Liga 2015/16):
 ## Project Structure
 
 ```
-xg-model/
-├── .github/workflows/ci.yml   # GitHub Actions: lint + test on every push
-├── src/
-│   ├── data_loader.py          # StatsBomb ingestion + chronological match index
-│   ├── features.py             # 4 feature groups with expanding windows
-│   ├── cv.py                   # GapAwareTimeSeriesCV
-│   └── model.py                # LightGBM + CatBoost + XGEnsemble
-├── tests/
-│   └── test_features.py        # Unit tests including leakage checks
-├── outputs/                    # Generated plots + model artifacts
-├── notebooks/                  # Exploratory notebooks
-├── train.py                    # Main entry point
-├── pyproject.toml              # pytest + ruff config
-└── requirements.txt
+xg-model-football/
+├── train.py              # Main training pipeline
+├── data_loader.py        # Download and load StatsBomb data
+├── features.py           # All feature engineering
+├── cv.py                 # GapAwareTimeSeriesCV
+├── model.py              # LightGBM, CatBoost, and Ensemble
+├── test_features.py      # Unit tests (leakage check, etc.)
+├── requirements.txt
+├── README.md
+└── LICENSE
 ```
 
 ---
