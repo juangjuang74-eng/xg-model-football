@@ -113,7 +113,7 @@ Data (La Liga 2015/16) is downloaded automatically — no API key or registratio
 ### 2. Run tests
 
 ```bash
-pytest tests/ -v
+pytest test_features.py -v
 ```
 
 ---
