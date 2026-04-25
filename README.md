@@ -1,4 +1,4 @@
-# ⚽ xG Model — Expected Goals Football Analytics
+# ⚽ xG Model — Expected Goals  Analytics
 
 <div align="center">
 
